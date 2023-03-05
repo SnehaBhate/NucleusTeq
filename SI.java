@@ -1,4 +1,3 @@
-
 import java.util.*;
 
 public class SI {
@@ -26,5 +25,4 @@ public class SI {
         sc.close();
 
     }
-}
 }
