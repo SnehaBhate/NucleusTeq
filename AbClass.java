@@ -5,7 +5,7 @@ Display perimeter and area of circle and rectangle.*/
 
 abstract class Shape {
 
-    abstract void perimter();
+    abstract void perimeter();
 
     abstract void area();
 
@@ -16,6 +16,11 @@ class Circle extends Shape {
     void area() {
         System.out.println("area - ");
     }
+
+    void perimeter() {
+        System.out.println("perimeter circle");
+    }
+
 }
 
 class Rectangle extends Shape {
@@ -23,16 +28,24 @@ class Rectangle extends Shape {
     void perimeter() {
         System.out.println("perimeter");
     }
+
+    void area() {
+        System.out.println("area rectangle");
+    }
+
 }
 
 public class AbClass {
 
     public static void main(String args[]) {
 
-        Shape obj;
+        Circle obj = new Circle();
+        obj.area();
+        obj.perimeter();
 
-        System.out.println(obj.area());
-        System.out.println(obj.perimter());
+        Rectangle obj1 = new Rectangle();
+        obj1.area();
+        obj1.perimeter();
 
     }
 }
