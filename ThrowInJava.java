@@ -1,7 +1,7 @@
 public class ThrowInJava {
 
     // function to check if person is eligible to vote or not
-    public static void validate(int ) {
+    public static void validate(int) {
         if (age < 18) {
             // throw Arithmetic exception if not eligible to vote
             throw new ArithmeticException("Person is not eligible to vote");

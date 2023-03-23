@@ -8,11 +8,11 @@ public class File {
 
         // reading
         FileInputStream fin = new FileInputStream("file1.txt");
-        int ch;
+        int data;
 
         // Holds true till there is data inside file
-        while ((ch = fin.read()) != -1)
-            System.out.print((char) ch);
+        while ((data = fin.read()) != -1)
+            System.out.print((char) data);
 
         // Close the file connections
         // using close() method
@@ -22,7 +22,7 @@ public class File {
         FileOutputStream fout = new FileOutputStream("file1.txt");
 
         // we need to transfer this string to files
-        String st = "TATA skdh olishdo";
+        String st = "Hello I am Sneha";
 
         char cha[] = st.toCharArray();
         for (int i = 0; i < st.length(); i++) {
