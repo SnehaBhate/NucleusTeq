@@ -1,0 +1,273 @@
+create database school;
+Query OK, 1 row affected (0.0179 sec)
+ MySQL  localhost:33060+ ssl  SQL > show database;
+ERROR: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+ MySQL  localhost:33060+ ssl  SQL > show databases;
++-----------------------+
+| Database              |
++-----------------------+
+| assignment1           |
+| assignment2           |
+| class11               |
+| company               |
+| db2                   |
+| hotelmanagement       |
+| hotelmanagementsystem |
+| hotelmananagement     |
+| information_schema    |
+| mysql                 |
+| performance_schema    |
+| sakila                |
+| school                |
+| sneha                 |
+| sys                   |
+| world                 |
++-----------------------+
+16 rows in set (0.0015 sec)
+ MySQL  localhost:33060+ ssl  SQL > use school;
+Default schema set to `school`.
+Fetching table and column names from `school` for auto-completion... Press ^C to stop.
+ MySQL  localhost:33060+ ssl  school  SQL > create table student(name varchar(50),stu_id int primary key,subject varchar(50),Roll_no int);
+Query OK, 0 rows affected (0.1080 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > describe student;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| name    | varchar(50) | YES  |     | NULL    |       |
+| stu_id  | int         | NO   | PRI | NULL    |       |
+| subject | varchar(50) | YES  |     | NULL    |       |
+| Roll_no | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.0235 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into student values()
+                                         -> describe student;
+ERROR: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'describe student' at line 2
+ MySQL  localhost:33060+ ssl  school  SQL > insert into student values('Sneha Bhate',101,'Computer Science',56);
+Query OK, 1 row affected (0.0238 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into student values('Khushi Solanki',102,'Computer Science',78);
+Query OK, 1 row affected (0.0155 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into student values('Aayushi Mandloi',103,'Electronics',67);
+Query OK, 1 row affected (0.0145 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into student values('Sampada Vyas',104,'Mechanical',80);
+Query OK, 1 row affected (0.0143 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into student values('Kanika Patidar',105,'Biochemical',65);
+Query OK, 1 row affected (0.0158 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into student values('Priya Patidar',106,'Electronics',65);
+Query OK, 1 row affected (0.0140 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into student values('Divya Sharma',107,'Computer Science',55);
+Query OK, 1 row affected (0.0164 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into student values('Sukanya Sinha',108,'Civil',90);
+Query OK, 1 row affected (0.0152 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into student values('Shikha Pathak',108,'Civil',74);
+ERROR: 1062: Duplicate entry '108' for key 'student.PRIMARY'
+ MySQL  localhost:33060+ ssl  school  SQL > insert into student values('Shikha Pathak',109,'Civil',74);
+Query OK, 1 row affected (0.0239 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into student values('Himanshi Gupta',110,'Biochemical',75);
+Query OK, 1 row affected (0.0152 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > desc student;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| name    | varchar(50) | YES  |     | NULL    |       |
+| stu_id  | int         | NO   | PRI | NULL    |       |
+| subject | varchar(50) | YES  |     | NULL    |       |
+| Roll_no | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.0178 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > select * from student;
++-----------------+--------+------------------+---------+
+| name            | stu_id | subject          | Roll_no |
++-----------------+--------+------------------+---------+
+| Sneha Bhate     |    101 | Computer Science |      56 |
+| Khushi Solanki  |    102 | Computer Science |      78 |
+| Aayushi Mandloi |    103 | Electronics      |      67 |
+| Sampada Vyas    |    104 | Mechanical       |      80 |
+| Kanika Patidar  |    105 | Biochemical      |      65 |
+| Priya Patidar   |    106 | Electronics      |      65 |
+| Divya Sharma    |    107 | Computer Science |      55 |
+| Sukanya Sinha   |    108 | Civil            |      90 |
+| Shikha Pathak   |    109 | Civil            |      74 |
+| Himanshi Gupta  |    110 | Biochemical      |      75 |
++-----------------+--------+------------------+---------+
+10 rows in set (0.0121 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > update set Roll_no = 66 where name = Shikha pathak;
+ERROR: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'set Roll_no = 66 where name = Shikha pathak' at line 1
+ MySQL  localhost:33060+ ssl  school  SQL > update set Roll_no = 66 where name = Shikha Pathak;
+ERROR: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'set Roll_no = 66 where name = Shikha Pathak' at line 1
+ MySQL  localhost:33060+ ssl  school  SQL > update student set Roll_no = 66 where name = Shikha Pathak;
+ERROR: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Pathak' at line 1
+ MySQL  localhost:33060+ ssl  school  SQL > update student set Roll_no = 66 where name = 'Shikha Pathak';
+Query OK, 1 row affected (0.0151 sec)
+
+Rows matched: 1  Changed: 1  Warnings: 0
+ MySQL  localhost:33060+ ssl  school  SQL > select * from student;
++-----------------+--------+------------------+---------+
+| name            | stu_id | subject          | Roll_no |
++-----------------+--------+------------------+---------+
+| Sneha Bhate     |    101 | Computer Science |      56 |
+| Khushi Solanki  |    102 | Computer Science |      78 |
+| Aayushi Mandloi |    103 | Electronics      |      67 |
+| Sampada Vyas    |    104 | Mechanical       |      80 |
+| Kanika Patidar  |    105 | Biochemical      |      65 |
+| Priya Patidar   |    106 | Electronics      |      65 |
+| Divya Sharma    |    107 | Computer Science |      55 |
+| Sukanya Sinha   |    108 | Civil            |      90 |
+| Shikha Pathak   |    109 | Civil            |      66 |
+| Himanshi Gupta  |    110 | Biochemical      |      75 |
++-----------------+--------+------------------+---------+
+10 rows in set (0.0009 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > create table Faculty(name varchar(50),Faculty_id int primary key,subject varchar(50),age int);
+Query OK, 0 rows affected (0.0786 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into Faculty('Rohit Jain',3422,'Computer Science',35);
+ERROR: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''Rohit Jain',3422,'Computer Science',35)' at line 1
+ MySQL  localhost:33060+ ssl  school  SQL >
+ MySQL  localhost:33060+ ssl  school  SQL > insert into Faculty values('Rohit Jain',3422,'Computer Science',35);
+Query OK, 1 row affected (0.0274 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into Faculty values('Praveen Mishra',3445,'Electronics',39);
+Query OK, 1 row affected (0.0261 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into Faculty values('Upendra Singh',4445,'Computer Science',42);
+Query OK, 1 row affected (0.0152 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into Faculty values('Jasmeet Kaur',3465,'Biochemical',33);
+Query OK, 1 row affected (0.0105 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into Faculty values('Pooja Gupta',2135,'Biochemical',30);
+Query OK, 1 row affected (0.0151 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into Faculty values('Rakesh Saxena',2155,'Civil',57);
+Query OK, 1 row affected (0.0155 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into Faculty values('Chandra Prakash Sengar',8445,'Mechanical',55);
+Query OK, 1 row affected (0.0162 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > select *from Faculty;
++------------------------+------------+------------------+-----+
+| name                   | Faculty_id | subject          | age |
++------------------------+------------+------------------+-----+
+| Pooja Gupta            |       2135 | Biochemical      |  30 |
+| Rakesh Saxena          |       2155 | Civil            |  57 |
+| Rohit Jain             |       3422 | Computer Science |  35 |
+| Praveen Mishra         |       3445 | Electronics      |  39 |
+| Jasmeet Kaur           |       3465 | Biochemical      |  33 |
+| Upendra Singh          |       4445 | Computer Science |  42 |
+| Chandra Prakash Sengar |       8445 | Mechanical       |  55 |
++------------------------+------------+------------------+-----+
+7 rows in set (0.0010 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > create table Course(course_name varchar(30),course_id int);
+Query OK, 0 rows affected (0.0671 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > drop table Course;
+Query OK, 0 rows affected (0.0749 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > create table Course(course_name varchar(30),course_id int primary key);
+Query OK, 0 rows affected (0.0372 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into Course values('Computer Science',2334);
+Query OK, 1 row affected (0.0204 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into Course values('Mechanical',7656);
+Query OK, 1 row affected (0.0151 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into Course values('Civil',7606);
+Query OK, 1 row affected (0.0161 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into Course values('Electronics',7616);
+Query OK, 1 row affected (0.0152 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > insert into Course values('Biochemical',7610);
+Query OK, 1 row affected (0.0152 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > select *from course;
++------------------+-----------+
+| course_name      | course_id |
++------------------+-----------+
+| Computer Science |      2334 |
+| Civil            |      7606 |
+| Biochemical      |      7610 |
+| Electronics      |      7616 |
+| Mechanical       |      7656 |
++------------------+-----------+
+5 rows in set (0.0131 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > select *from student;
++-----------------+--------+------------------+---------+
+| name            | stu_id | subject          | Roll_no |
++-----------------+--------+------------------+---------+
+| Sneha Bhate     |    101 | Computer Science |      56 |
+| Khushi Solanki  |    102 | Computer Science |      78 |
+| Aayushi Mandloi |    103 | Electronics      |      67 |
+| Sampada Vyas    |    104 | Mechanical       |      80 |
+| Kanika Patidar  |    105 | Biochemical      |      65 |
+| Priya Patidar   |    106 | Electronics      |      65 |
+| Divya Sharma    |    107 | Computer Science |      55 |
+| Sukanya Sinha   |    108 | Civil            |      90 |
+| Shikha Pathak   |    109 | Civil            |      66 |
+| Himanshi Gupta  |    110 | Biochemical      |      75 |
++-----------------+--------+------------------+---------+
+10 rows in set (0.0125 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > select *from Faculty;
++------------------------+------------+------------------+-----+
+| name                   | Faculty_id | subject          | age |
++------------------------+------------+------------------+-----+
+| Pooja Gupta            |       2135 | Biochemical      |  30 |
+| Rakesh Saxena          |       2155 | Civil            |  57 |
+| Rohit Jain             |       3422 | Computer Science |  35 |
+| Praveen Mishra         |       3445 | Electronics      |  39 |
+| Jasmeet Kaur           |       3465 | Biochemical      |  33 |
+| Upendra Singh          |       4445 | Computer Science |  42 |
+| Chandra Prakash Sengar |       8445 | Mechanical       |  55 |
++------------------------+------------+------------------+-----+
+7 rows in set (0.0241 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > alter table student add gpa decimal(3,2);
+Query OK, 0 rows affected (0.0528 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  school  SQL > select *from student;
++-----------------+--------+------------------+---------+------+
+| name            | stu_id | subject          | Roll_no | gpa  |
++-----------------+--------+------------------+---------+------+
+| Sneha Bhate     |    101 | Computer Science |      56 | NULL |
+| Khushi Solanki  |    102 | Computer Science |      78 | NULL |
+| Aayushi Mandloi |    103 | Electronics      |      67 | NULL |
+| Sampada Vyas    |    104 | Mechanical       |      80 | NULL |
+| Kanika Patidar  |    105 | Biochemical      |      65 | NULL |
+| Priya Patidar   |    106 | Electronics      |      65 | NULL |
+| Divya Sharma    |    107 | Computer Science |      55 | NULL |
+| Sukanya Sinha   |    108 | Civil            |      90 | NULL |
+| Shikha Pathak   |    109 | Civil            |      66 | NULL |
+| Himanshi Gupta  |    110 | Biochemical      |      75 | NULL |
++-----------------+--------+------------------+---------+------+
+10 rows in set (0.0010 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > update Faculty set name = 'Priyanka Verma' where Faculty_id = 2135;
+Query OK, 1 row affected (0.0173 sec)
+
+Rows matched: 1  Changed: 1  Warnings: 0
+ MySQL  localhost:33060+ ssl  school  SQL > select count(stu_id) from student;
++---------------+
+| count(stu_id) |
++---------------+
+|            10 |
++---------------+
+1 row in set (0.0246 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > select name.student,subject.student from student order by name;
+ERROR: 1054: Unknown column 'name.student' in 'field list'
+ MySQL  localhost:33060+ ssl  school  SQL > select student.name,student.subject from student order by name;
++-----------------+------------------+
+| name            | subject          |
++-----------------+------------------+
+| Aayushi Mandloi | Electronics      |
+| Divya Sharma    | Computer Science |
+| Himanshi Gupta  | Biochemical      |
+| Kanika Patidar  | Biochemical      |
+| Khushi Solanki  | Computer Science |
+| Priya Patidar   | Electronics      |
+| Sampada Vyas    | Mechanical       |
+| Shikha Pathak   | Civil            |
+| Sneha Bhate     | Computer Science |
+| Sukanya Sinha   | Civil            |
++-----------------+------------------+
+10 rows in set (0.0132 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > select *from student order by stu_id DESC;
++-----------------+--------+------------------+---------+------+
+| name            | stu_id | subject          | Roll_no | gpa  |
++-----------------+--------+------------------+---------+------+
+| Himanshi Gupta  |    110 | Biochemical      |      75 | NULL |
+| Shikha Pathak   |    109 | Civil            |      66 | NULL |
+| Sukanya Sinha   |    108 | Civil            |      90 | NULL |
+| Divya Sharma    |    107 | Computer Science |      55 | NULL |
+| Priya Patidar   |    106 | Electronics      |      65 | NULL |
+| Kanika Patidar  |    105 | Biochemical      |      65 | NULL |
+| Sampada Vyas    |    104 | Mechanical       |      80 | NULL |
+| Aayushi Mandloi |    103 | Electronics      |      67 | NULL |
+| Khushi Solanki  |    102 | Computer Science |      78 | NULL |
+| Sneha Bhate     |    101 | Computer Science |      56 | NULL |
++-----------------+--------+------------------+---------+------+
+10 rows in set (0.0010 sec)
+ MySQL  localhost:33060+ ssl  school  SQL > alter table Faculty add Salary int;
+Query OK, 0 rows affected (0.0453 sec)
